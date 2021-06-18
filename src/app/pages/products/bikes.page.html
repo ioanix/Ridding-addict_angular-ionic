@@ -1,0 +1,24 @@
+<app-navbar [pageName]="'Bikes'"></app-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let bike of bikes; let i = index">
+      <ion-label>
+        {{i + 1}}
+      </ion-label>
+      <ion-label>
+        name: {{bike.name}}
+      </ion-label>
+
+<!--      <button ion-button icon-only (click)="deleteMovie(movie)">-->
+<!--        <ion-icon name="trash-outline"></ion-icon>-->
+<!--      </button>-->
+<!--      <button ion-button icon-only (click)="goToEditMovie(movie)">-->
+<!--        <ion-icon name="pencil-outline"></ion-icon>-->
+<!--      </button>-->
+<!--      <button ion-button icon-only (click)="goToDetails(movie)">-->
+<!--        <ion-icon name="chevron-forward-outline"></ion-icon>-->
+<!--      </button>-->
+
+    </ion-item>
+  </ion-list>
+</ion-content>
