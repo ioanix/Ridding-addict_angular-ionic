@@ -34,3 +34,8 @@ export enum AccessoryType {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   LOCKS
 }
+
+export const BIKE_TYPES = ['CITYBIKE', 'ELECTRICBIKE', 'MOUNTAINBIKE'];
+export const CATEGORIES_BIKE = ['BIKE'];
+export const CATEGORIES_ACCESSORY = ['ACCESSORY'];
+

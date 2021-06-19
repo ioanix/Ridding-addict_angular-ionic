@@ -9,16 +9,19 @@
         name: {{bike.name}}
       </ion-label>
 
-<!--      <button ion-button icon-only (click)="deleteMovie(movie)">-->
-<!--        <ion-icon name="trash-outline"></ion-icon>-->
-<!--      </button>-->
+      <button ion-button icon-only (click)="deleteBike(bike)" *ngIf="isLoggedIn()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </button>
 <!--      <button ion-button icon-only (click)="goToEditMovie(movie)">-->
 <!--        <ion-icon name="pencil-outline"></ion-icon>-->
 <!--      </button>-->
-<!--      <button ion-button icon-only (click)="goToDetails(movie)">-->
-<!--        <ion-icon name="chevron-forward-outline"></ion-icon>-->
-<!--      </button>-->
-
+      <button ion-button icon-only (click)="goToDetails(bike)">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="goToAddBike()" *ngIf="isLoggedIn()" color="medium">Add bike</ion-button>
+</ion-footer>

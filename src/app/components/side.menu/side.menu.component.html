@@ -8,10 +8,13 @@
         <ion-item [routerLink]="'/accessories'">Accessories</ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle auto-hide="true">
-        <ion-item [routerLink]="'/orders'">My orders</ion-item>
+        <ion-item [routerLink]="'/orders'" *ngIf="isLoggedIn()">My orders</ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle auto-hide="true">
-        <ion-item>Logout</ion-item>
+        <ion-item (click)="logOut()" [routerLink]="'/login'" *ngIf="isLoggedIn()">Logout</ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle auto-hide="true">
+        <ion-item (click)="logIn()" [routerLink]="'/login'" *ngIf="isNotLoggedIn()">Login</ion-item>
       </ion-menu-toggle>
 
     </ion-list>

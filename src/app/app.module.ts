@@ -9,16 +9,25 @@ import {AppRoutingModule} from './app-routing.module';
 import {HomePage} from './pages/home/home.page';
 import {SideMenuComponent} from './components/side.menu/side.menu.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {BikesPage} from './pages/products/bikes.page';
+import {BikesPage} from './pages/bikes/bikes.page';
 import {ApiService} from './services/api.service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginPage} from './pages/login/login.page';
 import {TokenInterceptor} from './interceptors/auth-token.interceptor';
 import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
+import {BikeDetailsPage} from './pages/bike-details/bike-details.page';
+import {AddBikePage} from './pages/add-bike/add-bike.page';
 
 @NgModule({
-  declarations: [AppComponent, HomePage, SideMenuComponent, NavbarComponent, BikesPage, LoginPage],
+  declarations: [AppComponent,
+    LoginPage,
+    BikesPage,
+    BikeDetailsPage,
+    AddBikePage,
+    HomePage,
+    SideMenuComponent,
+    NavbarComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, ApiService, AuthService,

@@ -1,0 +1,20 @@
+<app-navbar [pageName]="'Bike Details'"></app-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-label>Price</ion-label>
+      <ion-label>Short description</ion-label>
+      <ion-label>BikeType</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{bike.name}}</ion-label>
+      <ion-label>{{bike.price}}</ion-label>
+      <ion-label>{{bike.shortDescription}}</ion-label>
+      <ion-label>{{bike.bikeType}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-button color="secondary" [routerLink]="'/bikes'" color="medium">Back to bikes</ion-button>
+</ion-footer>
