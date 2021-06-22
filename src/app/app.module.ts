@@ -18,6 +18,7 @@ import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {BikeDetailsPage} from './pages/bike-details/bike-details.page';
 import {AddBikePage} from './pages/add-bike/add-bike.page';
+import {EditBikePage} from './pages/edit-bike/edit-bike.page';
 
 @NgModule({
   declarations: [AppComponent,
@@ -25,6 +26,7 @@ import {AddBikePage} from './pages/add-bike/add-bike.page';
     BikesPage,
     BikeDetailsPage,
     AddBikePage,
+    EditBikePage,
     HomePage,
     SideMenuComponent,
     NavbarComponent],

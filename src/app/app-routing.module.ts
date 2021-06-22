@@ -5,6 +5,7 @@ import {BikesPage} from './pages/bikes/bikes.page';
 import {LoginPage} from './pages/login/login.page';
 import {BikeDetailsPage} from './pages/bike-details/bike-details.page';
 import {AddBikePage} from './pages/add-bike/add-bike.page';
+import {EditBikePage} from "./pages/edit-bike/edit-bike.page";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'bikes/add',
     component: AddBikePage,
+  },
+  {
+    path: 'bikes/edit',
+    component: EditBikePage,
   },
   {
     path: '',

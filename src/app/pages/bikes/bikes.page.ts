@@ -60,4 +60,15 @@ export class BikesPage {
       this.loadBikes();
     });
   }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  goToEditBike(bike: Product) {
+
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(bike),
+      },
+    };
+    this.router.navigate(['bikes/edit'], navigationExtras);
+  }
 }

@@ -12,9 +12,9 @@
       <button ion-button icon-only (click)="deleteBike(bike)" *ngIf="isLoggedIn()">
         <ion-icon name="trash-outline"></ion-icon>
       </button>
-<!--      <button ion-button icon-only (click)="goToEditMovie(movie)">-->
-<!--        <ion-icon name="pencil-outline"></ion-icon>-->
-<!--      </button>-->
+      <button ion-button icon-only (click)="goToEditBike(bike)" *ngIf="isLoggedIn()">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="goToDetails(bike)">
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </button>
