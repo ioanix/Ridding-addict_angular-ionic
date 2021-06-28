@@ -5,7 +5,10 @@ import {BikesPage} from './pages/bikes/bikes.page';
 import {LoginPage} from './pages/login/login.page';
 import {BikeDetailsPage} from './pages/bike-details/bike-details.page';
 import {AddBikePage} from './pages/add-bike/add-bike.page';
-import {EditBikePage} from "./pages/edit-bike/edit-bike.page";
+import {EditBikePage} from './pages/edit-bike/edit-bike.page';
+import {OrdersPage} from './pages/orders/order.page';
+import {AddOrderPage} from './pages/add-order/add-order.page';
+import {RegisterPage} from './pages/register/register.page';
 
 const routes: Routes = [
   {
@@ -17,8 +20,20 @@ const routes: Routes = [
     component: LoginPage,
   },
   {
+    path: 'register',
+    component: RegisterPage,
+  },
+  {
     path: 'bikes',
     component: BikesPage,
+  },
+  {
+    path: 'orders',
+    component: OrdersPage,
+  },
+  {
+    path: 'orders/add',
+    component: AddOrderPage,
   },
   {
     path: 'bikes/details',

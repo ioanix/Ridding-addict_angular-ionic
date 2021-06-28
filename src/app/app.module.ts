@@ -19,19 +19,26 @@ import {FormsModule} from '@angular/forms';
 import {BikeDetailsPage} from './pages/bike-details/bike-details.page';
 import {AddBikePage} from './pages/add-bike/add-bike.page';
 import {EditBikePage} from './pages/edit-bike/edit-bike.page';
+import {OrdersPage} from './pages/orders/order.page';
+import {AddOrderPage} from './pages/add-order/add-order.page';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RegisterPage} from './pages/register/register.page';
 
 @NgModule({
   declarations: [AppComponent,
     LoginPage,
+    RegisterPage,
     BikesPage,
     BikeDetailsPage,
     AddBikePage,
     EditBikePage,
     HomePage,
+    OrdersPage,
+    AddOrderPage,
     SideMenuComponent,
     NavbarComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, NgbModule],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, ApiService, AuthService,
     {
     provide: HTTP_INTERCEPTORS,

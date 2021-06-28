@@ -28,5 +28,9 @@ export class LoginPage {
         this.router.navigateByUrl('/home');
       });
   }
+
+  goToRegister() {
+    this.router.navigateByUrl('/register');
+  }
 }
 

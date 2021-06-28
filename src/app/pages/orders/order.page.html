@@ -1,0 +1,25 @@
+<app-navbar [pageName]="'Orders'"></app-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let order of orders; let i = index">
+      <ion-label>
+        {{i + 1}}
+      </ion-label>
+      <ion-label>products:</ion-label>
+      <ion-label *ngFor="let product of order.products">
+        {{product.name}}, {{product.price}};
+<!--        products: {{order.products[0]?.name}}, {{order.products[0]?.price}}; {{order.products[1]?.name}}, {{order.products[1]?.price}}-->
+      </ion-label>
+      <ion-label>
+        customer: {{order.customer}}
+      </ion-label>
+      <ion-label>
+        Total amount paid: {{order.totalAmountPaid}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="goToAddOrder()" *ngIf="isLoggedIn()" color="medium">Add order</ion-button>
+</ion-footer>

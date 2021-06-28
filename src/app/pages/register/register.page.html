@@ -1,0 +1,72 @@
+<app-navbar [pageName]="'REGISTER'"></app-navbar>
+
+<ion-content>
+  <div class="form-wrapper">
+    <form>
+      <ion-item>
+        <ion-label>Firstname</ion-label>
+        <ion-input [(ngModel)]="registerData.firstName" name="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lastname</ion-label>
+        <ion-input [(ngModel)]="registerData.lastName" name="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input [(ngModel)]="registerData.username" name="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input [(ngModel)]="registerData.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="registerData.password" name="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Role</ion-label>
+        <ion-select interface="popover" [(ngModel)]="registerData.role" name="roles">
+          <ion-select-option *ngFor="let option of ROLES" [value]="option">
+            {{option}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+<!--      <div ngModelGroup="creditCards">-->
+<!--        <ion-label>Creditcards</ion-label>-->
+<!--        <div class="form-group">-->
+<!--          <ion-label>CardholderName</ion-label>-->
+<!--          <ion-input [(ngModel)]="card.cardHolderName" name="cardHolderName"></ion-input>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <ion-label>Card Number</ion-label>-->
+<!--          <ion-input [(ngModel)]="card.cardNumber" name="cardNumber"></ion-input>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <ion-label>Cvv code</ion-label>-->
+<!--          <ion-input type="number" [(ngModel)]="card.cvvCode" name="cvvCode"></ion-input>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <ion-label>Expiration date</ion-label>-->
+<!--          <ion-input [(ngModel)]="card.expirationDate" name="expirationDate"></ion-input>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <ion-label>CardType</ion-label>-->
+<!--          <ion-select interface="popover" [(ngModel)]="card.cardType" name="cardType">-->
+<!--            <ion-select-option *ngFor="let option of CARD_TYPES" [value]="option">-->
+<!--              {{option}}-->
+<!--            </ion-select-option>-->
+<!--          </ion-select>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <ion-button (click)="register()" color="medium">Register</ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<!--cardHolderName: string;-->
+<!--cardNumber: string;-->
+<!--cvvCode: number;-->
+<!--expirationDate: string;-->
+<!--cardType: CardType;-->

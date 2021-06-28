@@ -2,13 +2,16 @@
   <ion-content>
     <ion-list>
       <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="'/home'">Home</ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle auto-hide="true">
         <ion-item [routerLink]="'/bikes'">Bikes</ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle auto-hide="true">
         <ion-item [routerLink]="'/accessories'">Accessories</ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle auto-hide="true">
-        <ion-item [routerLink]="'/orders'" *ngIf="isLoggedIn()">My orders</ion-item>
+        <ion-item [routerLink]="'/orders'" *ngIf="isLoggedIn()">My Orders</ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle auto-hide="true">
         <ion-item (click)="logOut()" [routerLink]="'/login'" *ngIf="isLoggedIn()">Logout</ion-item>
