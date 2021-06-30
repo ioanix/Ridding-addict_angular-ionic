@@ -2,7 +2,7 @@
 
 <h4>"Life is like ridding a bicycle: to keep your balance you must keep on ridding"</h4>
 
-<ngb-carousel #carousel [interval]="1000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+<ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
   <ng-template ngbSlide *ngFor="let img of images; index as i">
     <div class="carousel-caption">
 <!--      <h3>My slide {{i + 1}} title</h3>-->

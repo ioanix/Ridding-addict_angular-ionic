@@ -14,9 +14,9 @@ export class AddOrderPage {
   CARD_TYPES = CARD_TYPES;
   productCodes: string[];
   order = new Order();
-  card = new Card();
 
   constructor(private apiService: ApiService, private navCtrl: NavController, private alertCtrl: AlertController) {
+    this.order.cardDto = new Card();
   }
 
   ionViewWillEnter() {
@@ -25,7 +25,7 @@ export class AddOrderPage {
   }
 
   getProductCodes(): string[] {
-
+    console.log('order', this.order);
     this.apiService.get('api/productCodes').subscribe((productCodes: string[]) => {
 
       this.productCodes = productCodes;
@@ -33,6 +33,20 @@ export class AddOrderPage {
 
     return this.productCodes;
   }
+
+  // getProducts() {
+  //
+  //   for (const item of this.productCodes) {
+  //
+  //     let product: Product = new Product();
+  //     this.apiService.get(`api/products/${item}`).subscribe((product1: Product) => {
+  //
+  //       product = product1;
+  //     });
+  //
+  //     this.products.push(product);
+  //   }
+  // }
   //
   // // eslint-disable-next-line @typescript-eslint/member-ordering
   // // @ts-ignore
@@ -40,6 +54,7 @@ export class AddOrderPage {
   // products = this.productCodes.map(code => this.apiService.get(`api/products/${code}`));
 
   addOrder() {
+    console.log('order', this.order);
     this.apiService.post('api/orders/pay', this.order).subscribe(
       () => {
         this.navCtrl.back();
@@ -60,5 +75,4 @@ export class AddOrderPage {
       }
     );
   }
-
 }

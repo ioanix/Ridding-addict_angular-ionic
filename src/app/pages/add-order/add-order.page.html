@@ -1,40 +1,40 @@
 <app-navbar [pageName]="'Add Order'"></app-navbar>
 <ion-content>
-  <div class="form-wrapper">
+<!--  <div class="form-wrapper">-->
+  <div>
     <form>
       <ion-item>
         <ion-label>ProductCode</ion-label>
-        <ion-select interface="popover" [(ngModel)]="order.productCode" name="productCode">
+        <ion-select multiple interface="popover" [(ngModel)]="order.productCodes" name="productCode">
           <ion-select-option *ngFor="let option of productCodes" [value]="option">
             {{option}}
           </ion-select-option>
         </ion-select>
       </ion-item>
-<!--      <ion-item>-->
-
-<!--        <ion-label>Cardholder name</ion-label>-->
-<!--        <ion-input type="text" [(ngModel)]="order.cardHolderName" name="cardHolderName"></ion-input>-->
-<!--      </ion-item>-->
-<!--&lt;!&ndash;      <ion-item>&ndash;&gt;-->
-<!--&lt;!&ndash;        <ion-label>Card number</ion-label>&ndash;&gt;-->
-<!--&lt;!&ndash;        <ion-input type="number" [(ngModel)]="order.cardNumber" name="cardNumber"></ion-input>&ndash;&gt;-->
-<!--      </ion-item>-->
-      <!--      <ion-item>-->
-      <!--        <ion-label>Cvv code</ion-label>-->
-      <!--        <ion-input type="text" [(ngModel)]="order.cvvCode" name="cvvCode"></ion-input>-->
-      <!--      </ion-item>-->
-      <!--      <ion-item>-->
-      <!--        <ion-label>Expiration Date</ion-label>-->
-      <!--        <ion-input type="text" [(ngModel)]="order.expirationDate" name="expirationDate"></ion-input>-->
-      <!--      </ion-item>-->
-      <!--      <ion-item>-->
-      <!--        <ion-label>CardType</ion-label>-->
-      <!--        <ion-select interface="popover" [(ngModel)]="order.cardType" name="cardType">-->
-      <!--          <ion-select-option *ngFor="let option of CARD_TYPES" [value]="option">-->
-      <!--            {{option}}-->
-      <!--          </ion-select-option>-->
-      <!--        </ion-select>-->
-      <!--      </ion-item>-->
+      <ion-item>
+        <ion-label>Cardholder name</ion-label>
+        <ion-input type="text" [(ngModel)]="order.cardDto.cardHolderName" name="cardHolderName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Card number</ion-label>
+        <ion-input type="number" [(ngModel)]="order.cardDto.cardNumber" name="cardNumber"></ion-input>
+      </ion-item>
+            <ion-item>
+              <ion-label>Cvv code</ion-label>
+              <ion-input type="number" [(ngModel)]="order.cardDto.cvvCode" name="cvvCode"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Expiration Date</ion-label>
+              <ion-input type="text" [(ngModel)]="order.cardDto.expirationDate" name="expirationDate"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>CardType</ion-label>
+              <ion-select interface="popover" [(ngModel)]="order.cardDto.cardType" name="cardType">
+                <ion-select-option *ngFor="let option of CARD_TYPES" [value]="option">
+                  {{option}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
     </form>
   </div>
 </ion-content>
@@ -44,3 +44,5 @@
   <br>
   <ion-button color="secondary" [routerLink]="'/orders'" color="medium">Back to orders</ion-button>
 </ion-footer>
+
+<!--[value]="order.card.cardHolderName" (input)="handleCardholderName($event)" name="cardHolderName"-->

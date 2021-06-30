@@ -2,13 +2,8 @@ import {Card} from './card.model';
 
 export class Order {
 
-  productCode: string;
-  card: Card;
-  // cardHolderName: string;
-  // cardNumber: string;
-  // cvvCode: number;
-  // expirationDate: string;
-  // cardType: CardType;
+  productCodes: string;
+  cardDto: Card;
 }
 
 export enum CardType {
