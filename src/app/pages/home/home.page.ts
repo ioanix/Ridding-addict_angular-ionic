@@ -17,7 +17,7 @@ export class HomePage {
   pauseOnFocus = true;
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
+  @ViewChild('carousel', {static: true}) carousel: NgbCarousel;
 
   togglePaused() {
     if (this.paused) {
