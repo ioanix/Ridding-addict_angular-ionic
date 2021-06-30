@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {AlertController, NavController} from '@ionic/angular';
-import {CARD_TYPES, Order} from '../../models/order.model';
-import {Card} from '../../models/card.model';
+import {Order} from '../../models/order.model';
+import {Card, CARD_TYPES} from '../../models/card.model';
+import {ProductCodeAndName} from '../../models/productCodeAndName.model';
 
 @Component({
   selector: 'app-add-order',
@@ -12,7 +13,7 @@ export class AddOrderPage {
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   CARD_TYPES = CARD_TYPES;
-  productCodes: string[];
+  productCodesAndNames: ProductCodeAndName[];
   order = new Order();
 
   constructor(private apiService: ApiService, private navCtrl: NavController, private alertCtrl: AlertController) {
@@ -21,37 +22,16 @@ export class AddOrderPage {
 
   ionViewWillEnter() {
 
-    this.getProductCodes();
+    this.getProductCodesAndNames();
   }
 
-  getProductCodes(): string[] {
+  getProductCodesAndNames() {
     console.log('order', this.order);
-    this.apiService.get('api/productCodes').subscribe((productCodes: string[]) => {
+    this.apiService.get('api/productCodesAndNames').subscribe((productCodesAndNames: ProductCodeAndName[]) => {
 
-      this.productCodes = productCodes;
+      this.productCodesAndNames = productCodesAndNames;
     });
-
-    return this.productCodes;
   }
-
-  // getProducts() {
-  //
-  //   for (const item of this.productCodes) {
-  //
-  //     let product: Product = new Product();
-  //     this.apiService.get(`api/products/${item}`).subscribe((product1: Product) => {
-  //
-  //       product = product1;
-  //     });
-  //
-  //     this.products.push(product);
-  //   }
-  // }
-  //
-  // // eslint-disable-next-line @typescript-eslint/member-ordering
-  // // @ts-ignore
-  // // eslint-disable-next-line @typescript-eslint/member-ordering
-  // products = this.productCodes.map(code => this.apiService.get(`api/products/${code}`));
 
   addOrder() {
     console.log('order', this.order);

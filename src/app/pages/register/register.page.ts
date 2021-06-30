@@ -2,8 +2,7 @@ import {Component} from '@angular/core';
 import {Register, ROLES} from '../../models/register.model';
 import {Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {Card} from '../../models/card.model';
-import {CARD_TYPES} from '../../models/order.model';
+import {Card, CARD_TYPES} from '../../models/card.model';
 
 @Component({
   selector: 'app-register',
