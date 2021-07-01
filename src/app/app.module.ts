@@ -26,9 +26,10 @@ import {RegisterPage} from './pages/register/register.page';
 import {ProductsPage} from './pages/products/products.page';
 import {AccessoriesPage} from './pages/accessories/accessories.page';
 import {AddAccessoryPage} from './pages/add-accessory/add-accessory.page';
-import {AddProductPage} from './pages/add-product/add-product.page';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {CommonModule} from '@angular/common';
+import {AccessoryDetailsPage} from './pages/accessory-details/accessory-details.page';
+import {EditAccessoryPage} from './pages/edit-accessory/edit-accessory.page';
 
 @NgModule({
   declarations: [AppComponent,
@@ -42,13 +43,15 @@ import {CommonModule} from '@angular/common';
     OrdersPage,
     AddOrderPage,
     ProductsPage,
-    AddProductPage,
     AccessoriesPage,
     AddAccessoryPage,
+    AccessoryDetailsPage,
+    EditAccessoryPage,
     SideMenuComponent,
     NavbarComponent],
   entryComponents: [],
-  imports: [BrowserModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, NgbModule, NgxPaginationModule],
+  imports: [BrowserModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+    FormsModule, NgbModule, NgxPaginationModule],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, ApiService, AuthService,
     {
     provide: HTTP_INTERCEPTORS,

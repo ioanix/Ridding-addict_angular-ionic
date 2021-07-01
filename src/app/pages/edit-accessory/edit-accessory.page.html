@@ -1,4 +1,4 @@
-<app-navbar [pageName]="'Edit Bike'"></app-navbar>
+<app-navbar [pageName]="'Edit Accessory'"></app-navbar>
 <ion-content>
   <div class="form-wrapper">
     <form>
@@ -19,9 +19,9 @@
         <ion-input type="text" [(ngModel)]="product.shortDescription" name="shortDescription"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>BikeType</ion-label>
-        <ion-select interface="popover" [(ngModel)]="product.bikeType" name="category">
-          <ion-select-option *ngFor="let option of BIKE_TYPES" [value]="option">
+        <ion-label>AccessoryType</ion-label>
+        <ion-select interface="popover" [(ngModel)]="product.accessoryType" name="category">
+          <ion-select-option *ngFor="let option of ACCESSORY_TYPES" [value]="option">
             {{option}}
           </ion-select-option>
         </ion-select>
@@ -31,6 +31,6 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button color="medium" (click)="editBike(product)">Edit bike</ion-button>
-  <ion-button color="medium" [routerLink]="'/bikes'">Back to bikes</ion-button>
+  <ion-button color="medium" (click)="editAccessory(product)">Edit accessory</ion-button>
+  <ion-button color="medium" [routerLink]="'/accessories'">Back to accessories</ion-button>
 </ion-footer>

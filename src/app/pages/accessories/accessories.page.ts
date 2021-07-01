@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Product} from '../../models/product.model';
 import {ApiService} from '../../services/api.service';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
@@ -38,5 +38,34 @@ export class AccessoriesPage {
   isLoggedIn() {
     const token = this.authSvc.getToken();
     return token !== null;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  goToDetails(accessory: Product) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(accessory),
+      },
+    };
+    this.router.navigate(['accessories/details'], navigationExtras);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  deleteAccessory(accessory: Product) {
+    this.apiService.delete('api/products/' + accessory.productCode).subscribe(() => {
+
+      this.loadAccessories();
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  goToEditAccessory(accessory: Product) {
+
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(accessory),
+      },
+    };
+    this.router.navigate(['accessories/edit'], navigationExtras);
   }
 }

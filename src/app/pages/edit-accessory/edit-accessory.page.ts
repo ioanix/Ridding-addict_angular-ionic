@@ -1,19 +1,18 @@
 import {Component} from '@angular/core';
-import {BIKE_TYPES, CATEGORIES_BIKE, Product} from '../../models/product.model';
+import {ACCESSORY_TYPES, CATEGORIES_ACCESSORY, Product} from '../../models/product.model';
 import {ApiService} from '../../services/api.service';
 import {AlertController, NavController} from '@ionic/angular';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-edit-bike',
-  templateUrl: 'edit-bike.page.html',
+  selector: 'app-edit-accessory',
+  templateUrl: 'edit-accessory.page.html',
 })
-export class EditBikePage {
-
+export class EditAccessoryPage {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  BIKE_TYPES = BIKE_TYPES;
+  ACCESSORY_TYPES = ACCESSORY_TYPES;
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  CATEGORIES = CATEGORIES_BIKE;
+  CATEGORIES = CATEGORIES_ACCESSORY;
 
   product = new Product();
 
@@ -30,8 +29,8 @@ export class EditBikePage {
     });
   }
 
-  editBike(bike: Product) {
-    this.apiSvc.put(`api/products/${this.product.productCode}`, bike).subscribe(
+  editAccessory(accessory: Product) {
+    this.apiSvc.put(`api/products/${this.product.productCode}`, accessory).subscribe(
       () => {
         this.navCtrl.back();
       },

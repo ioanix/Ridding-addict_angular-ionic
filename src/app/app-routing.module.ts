@@ -11,8 +11,9 @@ import {AddOrderPage} from './pages/add-order/add-order.page';
 import {RegisterPage} from './pages/register/register.page';
 import {ProductsPage} from './pages/products/products.page';
 import {AccessoriesPage} from './pages/accessories/accessories.page';
-import {AddProductPage} from './pages/add-product/add-product.page';
 import {AddAccessoryPage} from './pages/add-accessory/add-accessory.page';
+import {AccessoryDetailsPage} from './pages/accessory-details/accessory-details.page';
+import {EditAccessoryPage} from "./pages/edit-accessory/edit-accessory.page";
 
 const routes: Routes = [
   {
@@ -44,8 +45,12 @@ const routes: Routes = [
     component: ProductsPage,
   },
   {
-    path: 'products/add',
-    component: AddProductPage,
+    path: 'accessories/details',
+    component: AccessoryDetailsPage,
+  },
+  {
+    path: 'accessories/edit',
+    component: EditAccessoryPage,
   },
   {
     path: 'orders',
