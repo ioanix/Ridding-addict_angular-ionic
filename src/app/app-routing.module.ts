@@ -9,6 +9,10 @@ import {EditBikePage} from './pages/edit-bike/edit-bike.page';
 import {OrdersPage} from './pages/orders/order.page';
 import {AddOrderPage} from './pages/add-order/add-order.page';
 import {RegisterPage} from './pages/register/register.page';
+import {ProductsPage} from './pages/products/products.page';
+import {AccessoriesPage} from './pages/accessories/accessories.page';
+import {AddProductPage} from './pages/add-product/add-product.page';
+import {AddAccessoryPage} from './pages/add-accessory/add-accessory.page';
 
 const routes: Routes = [
   {
@@ -24,8 +28,24 @@ const routes: Routes = [
     component: RegisterPage,
   },
   {
+    path: 'accessories',
+    component: AccessoriesPage,
+  },
+  {
+    path: 'accessories/add',
+    component: AddAccessoryPage,
+  },
+  {
     path: 'bikes',
     component: BikesPage,
+  },
+  {
+    path: 'products',
+    component: ProductsPage,
+  },
+  {
+    path: 'products/add',
+    component: AddProductPage,
   },
   {
     path: 'orders',

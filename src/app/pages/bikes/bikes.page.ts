@@ -14,6 +14,9 @@ export class BikesPage {
   bikes: Product[];
   bike = 'bike';
 
+  pageNumber = 3;
+  currentPg: number;
+
   constructor(private apiService: ApiService, private router: Router, private authSvc: AuthService) {
   }
 
@@ -70,5 +73,22 @@ export class BikesPage {
       },
     };
     this.router.navigate(['bikes/edit'], navigationExtras);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  inc(){
+    if(this.pageNumber < this.bikes.length){
+      this.pageNumber += 3;
+    }
+
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  dec(){
+
+    if(this.pageNumber > 3){
+      this.pageNumber -= 3;
+    }
+
   }
 }

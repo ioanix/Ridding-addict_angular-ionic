@@ -1,0 +1,34 @@
+<app-navbar [pageName]="'Products'"></app-navbar>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let product of products; let i = index">
+      <ion-label>
+        {{i + 1}}
+      </ion-label>
+      <ion-label>
+        name: {{product.name}}
+      </ion-label>
+      <ion-label>
+        name: {{product.price}}
+      </ion-label>
+
+<!--      <button ion-button icon-only (click)="deleteBike(bike)" *ngIf="isLoggedIn()">-->
+<!--        <ion-icon name="trash-outline"></ion-icon>-->
+<!--      </button>-->
+<!--      <button ion-button icon-only (click)="goToEditBike(bike)" *ngIf="isLoggedIn()">-->
+<!--        <ion-icon name="pencil-outline"></ion-icon>-->
+<!--      </button>-->
+<!--      <button ion-button icon-only (click)="goToDetails(bike)">-->
+<!--        <ion-icon name="chevron-forward-outline"></ion-icon>-->
+<!--      </button>-->
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="addBike()" color="medium">Add bike</ion-button><br>
+  <ion-button (click)="addAccessory()" color="medium">Add accessory</ion-button><br>
+</ion-footer>
+
+

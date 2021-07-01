@@ -1,33 +1,24 @@
 import {Component} from '@angular/core';
-import {BIKE_TYPES, CATEGORIES_BIKE, Category, Product} from '../../models/product.model';
-import {ApiService} from '../../services/api.service';
-import {AlertController, NavController} from '@ionic/angular';
+import {ACCESSORY_TYPES, CATEGORIES_ACCESSORY, Product} from '../../models/product.model';
+import {ApiService} from "../../services/api.service";
+import {AlertController, NavController} from "@ionic/angular";
 
 @Component({
-  selector: 'app-add-bike',
-  templateUrl: './add-bike.page.html',
-  styleUrls: ['./add-bike.page.scss'],
+  selector: 'app-add-accessory',
+  templateUrl: './add-accessory.page.html',
 })
-export class AddBikePage {
-
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  BIKE_TYPES = BIKE_TYPES;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  CATEGORIES = CATEGORIES_BIKE;
+export class AddAccessoryPage {
 
   product = new Product();
-
-  defaultCategory: Category;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  CATEGORIES = CATEGORIES_ACCESSORY;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  ACCESSORY_TYPES = ACCESSORY_TYPES;
 
   constructor(private apiService: ApiService, private navCtrl: NavController, private alertCtrl: AlertController) {
   }
 
-  ionViewWillEnter() {
-
-    this.defaultCategory = Category.BIKE;
-  }
-
-  addBike() {
+  addAccessory() {
     this.apiService.post('api/products', this.product).subscribe(
       () => {
         this.navCtrl.back();

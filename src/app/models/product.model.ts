@@ -35,7 +35,9 @@ export enum AccessoryType {
   LOCKS
 }
 
+export const CATEGORY = ['BIKE', 'ACCESSORY'];
 export const BIKE_TYPES = ['CITYBIKE', 'ELECTRICBIKE', 'MOUNTAINBIKE'];
 export const CATEGORIES_BIKE = ['BIKE'];
 export const CATEGORIES_ACCESSORY = ['ACCESSORY'];
+export const ACCESSORY_TYPES = ['LIGHTS', 'LOCKS'];
 
