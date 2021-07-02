@@ -18,19 +18,19 @@
         <ion-label>Short description</ion-label>
         <ion-input type="text" [(ngModel)]="product.shortDescription" name="shortDescription"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Category</ion-label>
-        <!--        <ion-select [(ngModel)]="product.category" name="category">-->
-        <!--          <ion-select-option *ngFor="let option of CATEGORIES" value="{{defaultCategory}}">-->
-        <!--            {{option}}-->
-        <!--          </ion-select-option>-->
-        <!--        </ion-select>-->
-        <ion-select interface="popover" [(ngModel)]="product.category" name="category">
-          <ion-select-option selected = 'true' *ngFor="let option of CATEGORIES" [value]="option">
-            {{option}}
-          </ion-select-option>
-        </ion-select>
-      </ion-item>
+<!--      <ion-item>-->
+<!--        <ion-label>Category</ion-label>-->
+<!--        &lt;!&ndash;        <ion-select [(ngModel)]="product.category" name="category">&ndash;&gt;-->
+<!--        &lt;!&ndash;          <ion-select-option *ngFor="let option of CATEGORIES" value="{{defaultCategory}}">&ndash;&gt;-->
+<!--        &lt;!&ndash;            {{option}}&ndash;&gt;-->
+<!--        &lt;!&ndash;          </ion-select-option>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </ion-select>&ndash;&gt;-->
+<!--        <ion-select interface="popover" [(ngModel)]="product.category" name="category">-->
+<!--          <ion-select-option selected = 'true' *ngFor="let option of CATEGORIES" [value]="option">-->
+<!--            {{option}}-->
+<!--          </ion-select-option>-->
+<!--        </ion-select>-->
+<!--      </ion-item>-->
       <ion-item>
         <ion-label>AccessoryType</ion-label>
         <ion-select interface="popover" [(ngModel)]="product.accessoryType" name="category">
