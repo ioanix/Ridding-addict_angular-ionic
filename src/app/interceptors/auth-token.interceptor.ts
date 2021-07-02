@@ -19,7 +19,6 @@ export class TokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
 
     const token = this.authSvc.getToken();
-    //console.log(token);
 
     if (token) {
       request = request.clone({

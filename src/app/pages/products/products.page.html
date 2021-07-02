@@ -10,25 +10,15 @@
         name: {{product.name}}
       </ion-label>
       <ion-label>
-        name: {{product.price}}
+        price: {{product.price}}
       </ion-label>
-
-<!--      <button ion-button icon-only (click)="deleteBike(bike)" *ngIf="isLoggedIn()">-->
-<!--        <ion-icon name="trash-outline"></ion-icon>-->
-<!--      </button>-->
-<!--      <button ion-button icon-only (click)="goToEditBike(bike)" *ngIf="isLoggedIn()">-->
-<!--        <ion-icon name="pencil-outline"></ion-icon>-->
-<!--      </button>-->
-<!--      <button ion-button icon-only (click)="goToDetails(bike)">-->
-<!--        <ion-icon name="chevron-forward-outline"></ion-icon>-->
-<!--      </button>-->
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer>
-  <ion-button (click)="addBike()" color="medium">Add bike</ion-button><br>
-  <ion-button (click)="addAccessory()" color="medium">Add accessory</ion-button><br>
+  <ion-button (click)="addBike()" color="medium" *ngIf="isLoggedInAndHasRole()">Add bike</ion-button><br>
+  <ion-button (click)="addAccessory()" color="medium" *ngIf="isLoggedInAndHasRole()">Add accessory</ion-button><br>
 </ion-footer>
 
 

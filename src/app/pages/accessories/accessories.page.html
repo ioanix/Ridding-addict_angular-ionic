@@ -9,10 +9,10 @@
         name: {{accessory.name}}
       </ion-label>
 
-      <button ion-button icon-only (click)="deleteAccessory(accessory)" *ngIf="isLoggedIn()">
+      <button ion-button icon-only (click)="deleteAccessory(accessory)" *ngIf="isLoggedInAndHasRole()">
         <ion-icon name="trash-outline"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goToEditAccessory(accessory)" *ngIf="isLoggedIn()">
+      <button ion-button icon-only (click)="goToEditAccessory(accessory)" *ngIf="isLoggedInAndHasRole()">
         <ion-icon name="pencil-outline"></ion-icon>
       </button>
       <button ion-button icon-only (click)="goToDetails(accessory)">
@@ -23,5 +23,5 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button (click)="goToAddAccessory()" *ngIf="isLoggedIn()" color="medium">Add accessory</ion-button>
+  <ion-button (click)="goToAddAccessory()" *ngIf="isLoggedInAndHasRole()" color="medium">Add accessory</ion-button>
 </ion-footer>

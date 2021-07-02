@@ -35,9 +35,11 @@ export class AccessoriesPage {
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  isLoggedIn() {
+  isLoggedInAndHasRole() {
     const token = this.authSvc.getToken();
-    return token !== null;
+    const userRole = this.authSvc.getRole();
+
+    return token !== null && userRole === '[ROLE_ADMIN]';
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering

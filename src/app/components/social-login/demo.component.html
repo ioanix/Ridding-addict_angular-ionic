@@ -1,0 +1,10 @@
+<app-navbar [pageName]="'SIGN IN WITH GOOGLE'"></app-navbar>
+
+<ion-content>
+  <form>
+    <div>
+    <ion-button (click)="signInWithGoogle('Google')" color="medium">Sign In with Google</ion-button><br><br>
+    <ion-button (click)="signOut()" color="medium">Sign Out</ion-button>
+    </div>
+  </form>
+</ion-content>

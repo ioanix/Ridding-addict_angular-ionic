@@ -32,8 +32,17 @@ export class ProductsPage {
   addBike() {
     this.router.navigateByUrl('bikes/add');
   }
+
   // eslint-disable-next-line @typescript-eslint/member-ordering
   addAccessory() {
     this.router.navigateByUrl('accessories/add');
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  isLoggedInAndHasRole() {
+    const token = this.authSvc.getToken();
+    const userRole = this.authSvc.getRole();
+
+    return token !== null && userRole === '[ROLE_ADMIN]';
   }
 }

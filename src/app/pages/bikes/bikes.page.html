@@ -1,7 +1,7 @@
 <app-navbar [pageName]="'Bikes'"></app-navbar>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let bike of bikes; let i = index paginate: {itemsPerPage: pageNumber, currentPage: currentPg}">
+    <ion-item *ngFor="let bike of bikes; let i = index">
       <ion-label>
         {{i + 1}}
       </ion-label>
@@ -9,10 +9,10 @@
         name: {{bike.name}}
       </ion-label>
 
-      <button ion-button icon-only (click)="deleteBike(bike)" *ngIf="isLoggedIn()">
+      <button ion-button icon-only (click)="deleteBike(bike)" *ngIf="isLoggedInAndHasRole()">
         <ion-icon name="trash-outline"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goToEditBike(bike)" *ngIf="isLoggedIn()">
+      <button ion-button icon-only (click)="goToEditBike(bike)" *ngIf="isLoggedInAndHasRole()">
         <ion-icon name="pencil-outline"></ion-icon>
       </button>
       <button ion-button icon-only (click)="goToDetails(bike)">
@@ -20,17 +20,19 @@
       </button>
     </ion-item>
   </ion-list>
-  <div class="paginate">
-    <pagination-controls (pageChange)="currentPg = $event"></pagination-controls>
-    <div>
-      <small># of items per page</small>
-      <button class="button" (click)="dec()"><i class="fa fa-minus"></i></button>
-      <input class="input" [value]="pageNumber">
-      <button class="button" (click)="inc()"><i class="fa fa-plus"></i></button>
-    </div>
-  </div>
+<!--    <div class="paginate">-->
+<!--      <pagination-controls (pageChange)="currentPg = $event"></pagination-controls>-->
+<!--      <div>-->
+<!--        <small># of items per page</small>-->
+<!--        <button class="button1" (click)="dec()"><i class="fa fa-minus"></i></button>-->
+<!--        <input class="input" [value]="pageNumber">-->
+<!--        <button class="button1" (click)="inc()"><i class="fa fa-plus"></i></button>-->
+<!--      </div>-->
+<!--    </div>-->
 </ion-content>
 
 <ion-footer>
-  <ion-button (click)="goToAddBike()" *ngIf="isLoggedIn()" color="medium">Add bike</ion-button>
+  <ion-button (click)="goToAddBike()" *ngIf="isLoggedInAndHasRole()" color="medium">Add bike</ion-button>
 </ion-footer>
+
+<!--paginate: {itemsPerPage: pageNumber, currentPage: currentPg}-->

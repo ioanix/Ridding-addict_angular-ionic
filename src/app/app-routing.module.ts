@@ -13,7 +13,8 @@ import {ProductsPage} from './pages/products/products.page';
 import {AccessoriesPage} from './pages/accessories/accessories.page';
 import {AddAccessoryPage} from './pages/add-accessory/add-accessory.page';
 import {AccessoryDetailsPage} from './pages/accessory-details/accessory-details.page';
-import {EditAccessoryPage} from "./pages/edit-accessory/edit-accessory.page";
+import {EditAccessoryPage} from './pages/edit-accessory/edit-accessory.page';
+import {DemoComponent} from './components/social-login/demo.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterPage,
+  },
+  {
+    path: 'google',
+    component: DemoComponent,
   },
   {
     path: 'accessories',

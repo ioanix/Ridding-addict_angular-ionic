@@ -9,9 +9,19 @@ export class AuthService {
     localStorage.setItem(AUTH_TOKEN_LOCAL_STORAGE_KEY, token);
   }
 
+  saveUserRole(role: string) {
+
+    localStorage.setItem('role', role);
+  }
+
   getToken(): string {
 
     return localStorage.getItem(AUTH_TOKEN_LOCAL_STORAGE_KEY);
+  }
+
+  getRole(): string {
+
+    return localStorage.getItem('role');
   }
 
   removeToken() {

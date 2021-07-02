@@ -4,7 +4,7 @@ export class AuthResponse {
   username: string;
   firstName: string;
   lastName: string;
-  authoritiesList: string[];
+  authoritiesList: string;
 }
 
 export const AUTH_TOKEN_LOCAL_STORAGE_KEY = 'token';

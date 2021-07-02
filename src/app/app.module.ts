@@ -21,7 +21,7 @@ import {AddBikePage} from './pages/add-bike/add-bike.page';
 import {EditBikePage} from './pages/edit-bike/edit-bike.page';
 import {OrdersPage} from './pages/orders/order.page';
 import {AddOrderPage} from './pages/add-order/add-order.page';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RegisterPage} from './pages/register/register.page';
 import {ProductsPage} from './pages/products/products.page';
 import {AccessoriesPage} from './pages/accessories/accessories.page';
@@ -30,6 +30,14 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {CommonModule} from '@angular/common';
 import {AccessoryDetailsPage} from './pages/accessory-details/accessory-details.page';
 import {EditAccessoryPage} from './pages/edit-accessory/edit-accessory.page';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from 'angularx-social-login';
+import {DemoComponent} from './components/social-login/demo.component';
+import {GOOGLE_OAUTH_CLIENT_ID} from './models/login.model';
 
 @NgModule({
   declarations: [AppComponent,
@@ -48,16 +56,35 @@ import {EditAccessoryPage} from './pages/edit-accessory/edit-accessory.page';
     AccessoryDetailsPage,
     EditAccessoryPage,
     SideMenuComponent,
-    NavbarComponent],
+    NavbarComponent,
+    DemoComponent],
   entryComponents: [],
   imports: [BrowserModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
-    FormsModule, NgbModule, NgxPaginationModule],
+    FormsModule, NgbModule, NgxPaginationModule, SocialLoginModule],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, ApiService, AuthService,
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi: true,
-  }],
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              GOOGLE_OAUTH_CLIENT_ID
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule {

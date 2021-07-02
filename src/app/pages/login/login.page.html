@@ -3,16 +3,23 @@
 <ion-content>
   <div class="form-wrapper">
     <form>
-      <ion-item>
-        <ion-label>Username</ion-label>
-        <ion-input [(ngModel)]="loginData.username" name="username"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="loginData.password" name="password"></ion-input>
-      </ion-item>
-      <ion-button (click)="login()" color="medium">Log in</ion-button>
+<!--      <ion-item>-->
+<!--        <ion-label>Username</ion-label>-->
+<!--        <ion-input [(ngModel)]="loginData.username" name="username"></ion-input>-->
+<!--      </ion-item>-->
+<!--      <ion-item>-->
+<!--        <ion-label>Password</ion-label>-->
+<!--        <ion-input type="password" [(ngModel)]="loginData.password" name="password"></ion-input>-->
+<!--      </ion-item>-->
+      <div>
+        <li>
+          <label>Username <input #username name="username"></label><br><br>
+          <label>Password <input #password name="password" type="password"></label>
+        </li>
+      </div>
+      <ion-button (click)="login(username.value, password.value)" color="medium" id="loginButton">Log in</ion-button>
       <ion-button (click)="goToRegister()" color="medium">Register</ion-button>
+      <ion-button (click)="goToSignInWithGoogle()" color="medium">Sign In with Google</ion-button>
     </form>
   </div>
 </ion-content>
