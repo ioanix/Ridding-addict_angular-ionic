@@ -14,6 +14,16 @@ export class AuthService {
     localStorage.setItem('role', role);
   }
 
+  saveName(name: string) {
+
+    localStorage.setItem('firstName', name);
+  }
+
+  getName(): string {
+
+    return localStorage.getItem('firstName');
+}
+
   getToken(): string {
 
     return localStorage.getItem(AUTH_TOKEN_LOCAL_STORAGE_KEY);

@@ -20,6 +20,9 @@ export class ProductsPage {
     this.loadProducts();
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  name = '';
+
   private loadProducts() {
 
     this.apiService.get('api/products/').subscribe((products: Product[]) => {
@@ -44,5 +47,13 @@ export class ProductsPage {
     const userRole = this.authSvc.getRole();
 
     return token !== null && userRole === '[ROLE_ADMIN]';
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  isLoggedIn() {
+    const token = this.authSvc.getToken();
+    this.name = this.authSvc.getName();
+
+    return token !== null;
   }
 }

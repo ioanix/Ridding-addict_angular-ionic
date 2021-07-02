@@ -30,6 +30,7 @@ export class LoginPage {
         console.log(response);
         this.authService.saveToken(response.token);
         this.authService.saveUserRole(response.authoritiesList);
+        this.authService.saveName(response.firstName);
         this.router.navigateByUrl('/home');
       },
         (err) => {

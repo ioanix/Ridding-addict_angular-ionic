@@ -1,6 +1,7 @@
 <app-navbar [pageName]="'ACCESSORIES'"></app-navbar>
 <ion-content>
   <ion-list>
+    <ion-title class="ion-text-right" *ngIf="isLoggedIn()">Hi, {{name}}!</ion-title>
     <ion-item *ngFor="let accessory of accessories; let i = index">
       <ion-label>
         {{i + 1}}

@@ -25,8 +25,10 @@ export class BikesPage {
     this.loadBikes();
   }
 
-  private loadBikes() {
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  name = '';
 
+  private loadBikes() {
     this.apiService.get(`api/products/categories/${this.bike}`).subscribe((bikes: Product[]) => {
 
       this.bikes = bikes;
@@ -50,6 +52,14 @@ export class BikesPage {
     const userRole = this.authSvc.getRole();
 
     return token !== null && userRole === '[ROLE_ADMIN]';
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  isLoggedIn() {
+    const token = this.authSvc.getToken();
+    this.name = this.authSvc.getName();
+
+    return token !== null;
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -78,19 +88,26 @@ export class BikesPage {
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  inc(){
-    if(this.pageNumber < this.bikes.length){
+  inc() {
+    if (this.pageNumber < this.bikes.length) {
       this.pageNumber += 3;
     }
 
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  dec(){
+  dec() {
 
-    if(this.pageNumber > 3){
+    if (this.pageNumber > 3) {
       this.pageNumber -= 3;
     }
 
+  }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  isNotLoggedIn() {
+    const token = this.authSvc.getToken();
+    this.name = 'user';
+
+    return token === null;
   }
 }

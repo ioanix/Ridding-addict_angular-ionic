@@ -21,6 +21,9 @@ export class AccessoriesPage {
     this.loadAccessories();
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  name = '';
+
   private loadAccessories() {
 
     this.apiService.get(`api/products/categories/${this.accessory}`).subscribe((accessories: Product[]) => {
@@ -40,6 +43,13 @@ export class AccessoriesPage {
     const userRole = this.authSvc.getRole();
 
     return token !== null && userRole === '[ROLE_ADMIN]';
+  }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  isLoggedIn() {
+    const token = this.authSvc.getToken();
+    this.name = this.authSvc.getName();
+
+    return token !== null;
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering

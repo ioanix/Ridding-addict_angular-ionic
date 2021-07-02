@@ -1,5 +1,6 @@
 <app-navbar [pageName]="'Bikes'"></app-navbar>
 <ion-content>
+  <ion-title class="ion-text-right" *ngIf="isLoggedIn()">Hi, {{name}}!</ion-title>
   <ion-list>
     <ion-item *ngFor="let bike of bikes; let i = index">
       <ion-label>
