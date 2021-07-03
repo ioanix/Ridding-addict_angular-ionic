@@ -12,17 +12,11 @@ export class DemoComponent implements OnInit {
 
   constructor(private authService: SocialAuthService) { }
 
-  refreshToken(): void {
-    this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
-  }
-
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
     });
-
-    this.refreshToken();
   }
 
   signInWithGoogle(platform: string): void {
@@ -33,9 +27,11 @@ export class DemoComponent implements OnInit {
       this.user = response;
     });
   }
+
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
+
   signOut(): void {
     this.authService.signOut();
     console.log('user is signed out');
